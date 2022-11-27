@@ -7,18 +7,18 @@ enum NumberValidationError {
   maxOutOfRange,
 }
 
-class NumberInput extends FormzInput<num?, NumberValidationError> {
+class NumberInput extends FormzInput<String, NumberValidationError> {
   NumberInput.pure(
     Object? value, {
     num? min,
     num? max,
-  }) : super.pure(num.tryParse(value != null ? value.toString() : '')) {
+  }) : super.pure(value != null ? '$value' : '') {
     _min = min;
     _max = max;
   }
 
-  NumberInput.dirty(Object? value)
-      : super.dirty(num.tryParse(value != null ? value.toString() : ''));
+  const NumberInput.dirty(Object? value)
+      : super.dirty(value != null ? '$value' : '');
 
   static num? _min;
   static num? _max;

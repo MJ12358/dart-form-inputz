@@ -17,11 +17,10 @@ class NumberInput extends FormzInput<String, NumberValidationError> {
     _max = max;
   }
 
-  const NumberInput.dirty(Object? value)
-      : super.dirty(value != null ? '$value' : '');
+  NumberInput.dirty(Object? value) : super.dirty(value != null ? '$value' : '');
 
-  static num? _min;
-  static num? _max;
+  late final num? _min;
+  late final num? _max;
 
   @override
   NumberValidationError? validator(Object? value) {
@@ -37,11 +36,11 @@ class NumberInput extends FormzInput<String, NumberValidationError> {
       return NumberValidationError.invalid;
     }
 
-    if (_min != null && i < _min!) {
+    if (_min != null && i <= _min!) {
       return NumberValidationError.minOutOfRange;
     }
 
-    if (_max != null && i > _max!) {
+    if (_max != null && i >= _max!) {
       return NumberValidationError.maxOutOfRange;
     }
 

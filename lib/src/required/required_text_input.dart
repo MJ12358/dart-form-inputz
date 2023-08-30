@@ -1,4 +1,4 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class RequiredTextInput extends TextInput {
   RequiredTextInput.pure(
@@ -11,7 +11,7 @@ class RequiredTextInput extends TextInput {
           max: max,
         );
 
-  const RequiredTextInput.dirty(String? value) : super.dirty(value);
+  RequiredTextInput.dirty(String? value) : super.dirty(value);
 
   @override
   TextValidationError? validator(String? value) {

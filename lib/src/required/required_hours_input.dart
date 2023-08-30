@@ -1,9 +1,9 @@
 part of dart_form_inputz;
 
-class RequiredMonthInput extends MonthInput {
-  RequiredMonthInput.pure(String? value) : super.pure(value);
+class RequiredHoursInput extends HoursInput {
+  RequiredHoursInput.pure(Object? value) : super.pure(value);
 
-  RequiredMonthInput.dirty(String? value) : super.dirty(value);
+  RequiredHoursInput.dirty(Object? value) : super.dirty(value);
 
   @override
   NumberValidationError? validator(String? value) {

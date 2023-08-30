@@ -1,23 +1,26 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum PhoneValidationError {
   empty,
   invalid,
 }
 
-// TODO: this does not cover all possibilities
-const List<String> _patterns = <String>[
-  'XXXXXXXXXX',
-  'XXX-XXX-XXXX',
-  '(XXX)XXXXXXX',
-  '(XXX)XXX-XXXX',
-  '(XXX) XXX-XXXX',
-];
-
 class PhoneInput extends FormzInput<String, PhoneValidationError> {
-  const PhoneInput.pure(String? value) : super.pure(value ?? '');
+  PhoneInput.pure(String? value) : super.pure(value ?? '');
 
-  const PhoneInput.dirty(String? value) : super.dirty(value ?? '');
+  PhoneInput.dirty(String? value) : super.dirty(value ?? '');
+
+  static const List<String> _patterns = <String>[
+    'XXXXXXXXXX',
+    'XXX XXX XXXX',
+    'XXX XXX-XXXX',
+    'XXX-XXX-XXXX',
+    '(XXX)XXXXXXX',
+    '(XXX)XXX-XXXX',
+    '(XXX) XXX XXXX',
+    '(XXX) XXX-XXXX',
+    '(XXX)-XXX-XXXX'
+  ];
 
   @override
   PhoneValidationError? validator(String? value) {

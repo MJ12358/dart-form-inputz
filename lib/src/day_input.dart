@@ -1,27 +1,23 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
-enum DayValidationError {
-  empty,
-  invalid,
-  outOfRange,
-  outOfRangeByMonth,
-}
+class DayInput extends NumberInput {
+  DayInput.pure(Object? value)
+      : month = MonthInput.pure(''),
+        super.pure(
+          value,
+          min: 0,
+          max: 31,
+        );
 
-class DayInput extends FormzInput<String, DayValidationError> {
-  const DayInput.pure(String? value)
-      : month = const MonthInput.pure(''),
-        super.pure(value ?? '');
-
-  const DayInput.dirty(
-    String? value, {
+  DayInput.dirty(
+    Object? value, {
     required this.month,
-  }) : super.dirty(value ?? '');
+  }) : super.dirty(value);
 
   final MonthInput month;
 
   @override
-  DayValidationError? validator(String? value) {
+  NumberValidationError? validator(String? value) {
     if (value == null || value.isEmpty) {
       return null;
     }
@@ -29,17 +25,13 @@ class DayInput extends FormzInput<String, DayValidationError> {
     final int? i = int.tryParse(value);
 
     if (i == null) {
-      return DayValidationError.invalid;
-    }
-
-    if (i < 1 || i > 31) {
-      return DayValidationError.outOfRange;
+      return NumberValidationError.invalid;
     }
 
     if (i > month.daysInMonth) {
-      return DayValidationError.outOfRangeByMonth;
+      return NumberValidationError.invalid;
     }
 
-    return null;
+    return super.validator(value);
   }
 }

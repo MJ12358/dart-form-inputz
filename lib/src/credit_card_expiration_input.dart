@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum CreditCardExpiryValidationError {
   empty,
@@ -8,9 +8,9 @@ enum CreditCardExpiryValidationError {
 
 class CreditCardExpiryInput
     extends FormzInput<String, CreditCardExpiryValidationError> {
-  const CreditCardExpiryInput.pure(String? value) : super.pure(value ?? '');
+  CreditCardExpiryInput.pure(String? value) : super.pure(value ?? '');
 
-  const CreditCardExpiryInput.dirty(String? value) : super.dirty(value ?? '');
+  CreditCardExpiryInput.dirty(String? value) : super.dirty(value ?? '');
 
   @override
   CreditCardExpiryValidationError? validator(String? value) {

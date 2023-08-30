@@ -1,9 +1,9 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class RequiredPhoneInput extends PhoneInput {
-  const RequiredPhoneInput.pure(String? value) : super.pure(value);
+  RequiredPhoneInput.pure(String? value) : super.pure(value);
 
-  const RequiredPhoneInput.dirty(String? value) : super.dirty(value);
+  RequiredPhoneInput.dirty(String? value) : super.dirty(value);
 
   @override
   PhoneValidationError? validator(String? value) {

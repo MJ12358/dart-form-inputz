@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum DateValidationError {
   empty,
@@ -8,6 +8,7 @@ enum DateValidationError {
 }
 
 class DateInput extends FormzInput<DateTime?, DateValidationError> {
+  // TODO: do you want to make the "value" a named parameter??????
   DateInput.pure(
     DateTime? value, {
     DateTime? min,
@@ -17,7 +18,7 @@ class DateInput extends FormzInput<DateTime?, DateValidationError> {
     _max = max;
   }
 
-  const DateInput.dirty(DateTime? value) : super.dirty(value);
+  DateInput.dirty(DateTime? value) : super.dirty(value);
 
   static DateTime? _min;
   static DateTime? _max;

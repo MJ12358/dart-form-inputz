@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum PasswordValidationError {
   empty,
@@ -10,7 +10,7 @@ class PasswordInput extends FormzInput<String, PasswordValidationError> {
     _min = min;
   }
 
-  const PasswordInput.dirty(String? value) : super.dirty(value ?? '');
+  PasswordInput.dirty(String? value) : super.dirty(value ?? '');
 
   static num? _min;
 

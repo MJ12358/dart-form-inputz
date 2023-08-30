@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum NumberValidationError {
   empty,
@@ -19,18 +19,16 @@ class NumberInput extends FormzInput<String, NumberValidationError> {
 
   NumberInput.dirty(Object? value) : super.dirty(value != null ? '$value' : '');
 
-  late final num? _min;
-  late final num? _max;
+  static num? _min;
+  static num? _max;
 
   @override
-  NumberValidationError? validator(Object? value) {
-    final String? result = value?.toString();
-
-    if (result == null || result.isEmpty) {
+  NumberValidationError? validator(String? value) {
+    if (value == null || value.isEmpty) {
       return null;
     }
 
-    final num? i = num.tryParse(result);
+    final num? i = num.tryParse(value);
 
     if (i == null) {
       return NumberValidationError.invalid;

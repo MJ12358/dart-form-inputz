@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum CreditCardValidationError {
   empty,
@@ -41,9 +41,9 @@ const Map<CreditCardType, Set<List<String>>> _patterns =
 };
 
 class CreditCardInput extends FormzInput<String, CreditCardValidationError> {
-  const CreditCardInput.pure(String? value) : super.pure(value ?? '');
+  CreditCardInput.pure(String? value) : super.pure(value ?? '');
 
-  const CreditCardInput.dirty(String? value) : super.dirty(value ?? '');
+  CreditCardInput.dirty(String? value) : super.dirty(value ?? '');
 
   CreditCardType get type {
     CreditCardType cardType = CreditCardType.other;

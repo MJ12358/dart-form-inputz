@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum CreditCardCvvValidationError {
   empty,
@@ -8,9 +8,9 @@ enum CreditCardCvvValidationError {
 
 class CreditCardCvvInput
     extends FormzInput<String, CreditCardCvvValidationError> {
-  const CreditCardCvvInput.pure(String? value) : super.pure(value ?? '');
+  CreditCardCvvInput.pure(String? value) : super.pure(value ?? '');
 
-  const CreditCardCvvInput.dirty(String? value) : super.dirty(value ?? '');
+  CreditCardCvvInput.dirty(String? value) : super.dirty(value ?? '');
 
   @override
   CreditCardCvvValidationError? validator(String? value) {

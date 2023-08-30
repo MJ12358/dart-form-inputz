@@ -1,5 +1,4 @@
-import 'package:dart_form_inputz/src/password_input.dart';
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum ConfirmedPasswordValidationError {
   empty,
@@ -13,7 +12,7 @@ class ConfirmedPasswordInput
       : original = PasswordInput.pure(),
         super.pure('');
 
-  const ConfirmedPasswordInput.dirty(
+  ConfirmedPasswordInput.dirty(
     String? value, {
     required this.original,
   }) : super.dirty(value ?? '');

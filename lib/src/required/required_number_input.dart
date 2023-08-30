@@ -1,4 +1,4 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class RequiredNumberInput extends NumberInput {
   RequiredNumberInput.pure(
@@ -14,10 +14,8 @@ class RequiredNumberInput extends NumberInput {
   RequiredNumberInput.dirty(Object? value) : super.dirty(value);
 
   @override
-  NumberValidationError? validator(Object? value) {
-    final String? result = value?.toString();
-
-    if (result == null || result.isEmpty) {
+  NumberValidationError? validator(String? value) {
+    if (value == null || value.isEmpty) {
       return NumberValidationError.empty;
     }
 

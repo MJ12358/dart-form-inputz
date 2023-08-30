@@ -1,17 +1,17 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class RequiredDayInput extends DayInput {
-  const RequiredDayInput.pure(String? value) : super.pure(value);
+  RequiredDayInput.pure(Object? value) : super.pure(value);
 
-  const RequiredDayInput.dirty(
-    String? value, {
+  RequiredDayInput.dirty(
+    Object? value, {
     required month,
   }) : super.dirty(value, month: month);
 
   @override
-  DayValidationError? validator(String? value) {
+  NumberValidationError? validator(String? value) {
     if (value == null || value.isEmpty) {
-      return DayValidationError.empty;
+      return NumberValidationError.empty;
     }
 
     return super.validator(value);

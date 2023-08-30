@@ -1,9 +1,9 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class RequiredEmailInput extends EmailInput {
-  const RequiredEmailInput.pure(String? value) : super.pure(value);
+  RequiredEmailInput.pure(String? value) : super.pure(value);
 
-  const RequiredEmailInput.dirty(String? value) : super.dirty(value);
+  RequiredEmailInput.dirty(String? value) : super.dirty(value);
 
   @override
   EmailValidationError? validator(String? value) {

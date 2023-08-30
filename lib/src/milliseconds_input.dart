@@ -1,4 +1,4 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class MillisecondsInput extends NumberInput {
   MillisecondsInput.pure(Object? value)

@@ -1,4 +1,4 @@
-import 'package:formz/formz.dart';
+part of dart_form_inputz;
 
 enum TextValidationError {
   empty,
@@ -17,7 +17,7 @@ class TextInput extends FormzInput<String, TextValidationError> {
     _max = max;
   }
 
-  const TextInput.dirty(String? value) : super.dirty(value ?? '');
+  TextInput.dirty(String? value) : super.dirty(value ?? '');
 
   static num? _min;
   static num? _max;

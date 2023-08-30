@@ -1,12 +1,16 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
-class RequiredSecondsInput extends RequiredNumberInput {
-  RequiredSecondsInput.pure(Object? value)
-      : super.pure(
-          value,
-          min: 0,
-          max: 60,
-        );
+class RequiredSecondsInput extends SecondsInput {
+  RequiredSecondsInput.pure(Object? value) : super.pure(value);
 
   RequiredSecondsInput.dirty(Object? value) : super.dirty(value);
+
+  @override
+  NumberValidationError? validator(String? value) {
+    if (value == null || value.isEmpty) {
+      return NumberValidationError.empty;
+    }
+
+    return super.validator(value);
+  }
 }

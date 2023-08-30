@@ -2,15 +2,23 @@ import 'package:dart_form_inputz/dart_form_inputz.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
-    // final awesome = Awesome();
+  test('date input', () {
+    final DateInput pure = DateInput.pure(DateTime.now());
+  });
 
-    setUp(() {
-      // Additional setup goes here.
-    });
+  test('number input', () {
+    final NumberInput pure = NumberInput.pure(0);
+    final NumberInput dirty = NumberInput.dirty(123);
 
-    test('First Test', () {
-      // expect(awesome.isAwesome, isTrue);
-    });
+    expect(pure.isPure, isTrue);
+    expect(dirty.isValid, isTrue);
+  });
+
+  test('text input', () {
+    final TextInput pure = TextInput.pure('');
+    final TextInput dirty = TextInput.dirty('value');
+
+    expect(pure.isPure, isTrue);
+    expect(dirty.isValid, isTrue);
   });
 }

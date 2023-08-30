@@ -1,4 +1,4 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class MinutesInput extends NumberInput {
   MinutesInput.pure(Object? value)

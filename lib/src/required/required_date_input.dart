@@ -1,4 +1,4 @@
-import 'package:dart_form_inputz/dart_form_inputz.dart';
+part of dart_form_inputz;
 
 class RequiredDateInput extends DateInput {
   RequiredDateInput.pure(
@@ -11,7 +11,7 @@ class RequiredDateInput extends DateInput {
           max: max,
         );
 
-  const RequiredDateInput.dirty(DateTime? value) : super.dirty(value);
+  RequiredDateInput.dirty(DateTime? value) : super.dirty(value);
 
   @override
   DateValidationError? validator(DateTime? value) {
